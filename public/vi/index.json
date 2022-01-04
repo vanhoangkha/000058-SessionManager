@@ -1,0 +1,71 @@
+[
+{
+	"uri": "/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Session Manager là một chức năng nằm trong dịch vụ System Manager của AWS, SSM cung cấp khả năng quản lý phiên bản an toàn và có thể kiểm tra được mà không cần mở cổng đến, không cần Bastion Host hoặc quản lý khóa SSH. Session Manager cũng giúp dễ dàng tuân thủ các chính sách của công ty yêu cầu quyền truy cập có kiểm soát vào các phiên bản, thực hành bảo mật nghiêm ngặt và nhật ký có thể kiểm tra đầy đủ với các chi tiết truy cập phiên bản, trong khi vẫn cung cấp cho người dùng cuối quyền truy cập đa nền tảng bằng một cú nhấp chuột vào các phiên bản được quản lý của bạn.\nVới việc sử dụng Session Manager, bạn sẽ có được những ưu điểm sau đây mà các cách làm truyền thống không có:\n Không cần phải mở cổng 22 cho giao thức SSH nên bảo mật hơn. Có thể cấu hình để kết nối không cần đi ra ngoài internet nên bảo mật hơn. Không cần quản lý private key của server để kết nối SSH. Quản lý tập trung được user bằng việc sử dụng AWS IAM. Truy cập tới server một cách dễ dàng và đơn giản bằng một click chuột. Thời gian truy cập nhanh chóng hơn các phương thức truyền thống như SSH Hỗ trợ nhiều hệ điều hành khác nhau như Linux, Windows, MacOS Log lại được các phiên kết nối và các câu lệnh đã thực thi trong lúc kết nối tới server.  Với những ưu điểm trên, bạn có thể sử dụng Session Manager thay vì sử dụng kỹ thuật Bastion host giúp chúng ta tiết kiệm được thời gian và tiền bạc khi quản lý server Bastion.\n"
+},
+{
+	"uri": "/vi/",
+	"title": "Session Management",
+	"tags": [],
+	"description": "",
+	"content": "Làm việc với Amazon SSM (Session Management) Tổng quan Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về Amazon SSM ( Session Management ). Thực hành tạo kết nối máy chủ public và máy chủ private.\nNội dung  Giới thiệu Các bước chuẩn bị Tạo kết nối đến máy chủ EC2 Session Management - Port Forwarding  "
+},
+{
+	"uri": "/vi/3-accessibilitytoinstances/3.1-public-instance/",
+	"title": "Tạo kết nối đến máy chủ EC2 Public",
+	"tags": [],
+	"description": "",
+	"content": "Các bước thực hiện sẽ như sau:  Tạo Linux instance và gán IAM Role chúng ta đã tạo  Kiểm tra lại Security group của Linux instance vừa tạo. Đảm bảo rằng outbound cho phép All Traffice tới 0.0.0.0/0 và không cần inbound.  Sau khi tạo xong public instance, bạn vào AWS System Manager -\u0026gt; chọn Session Manager và Start Session.  Sau đó chọn instance và ấn Start session để truy cập vào instance  Terminal sẽ xuất hiện trên trình duyệt. Kiểm tra với câu lệnh sudo tcpdump -nn port 22 và sudo tcpdump  chúng ta sẽ thấy không có traffic của SSH mà chỉ có traffic HTTPS.   Ở trên, chúng ta đã tạo kết nối vào public instance mà không cần mở cổng SSH 22, giúp cho bảo mật tốt hơn, tránh mọi sự tấn công tới cổng SSH.\nMột nhược điểm của cách làm trên là ta phải mở Security Group outbound ở cổng 443 ra ngoài internet. Vì là public instance nên có thể sẽ không vấn đề gì nhưng nếu bạn muốn bảo mật hơn nữa, bạn có thể khoá cổng 443 ra ngoài internet mà vẫn sử dụng được Session Manager. Cách làm này mình sẽ trình bày ở phần private instance dưới đây:\n\r"
+},
+{
+	"uri": "/vi/2-prerequiste/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "\rBạn cần tạo sẵn 1 Linux instance thuộc public subnet và 1 Window instance thuộc private subnet để thực hiện bài thực hành này.\n\rĐể sử dụng System Manager để quản lý window instance nói riêng và các instance nói chung của chúng ta trên AWS, ta cần phải cung cấp quyền cho System Manager truy cập vào instance của chúng ta.\nNội dung  Tạo IAM Role Tạo security group cho public subnet Tạo security group cho private subnet Tạo security group cho VPC Endpoint  Tạo IAM Role 2.1. Đăng nhập vào AWS Console tại https://aws.amazon.com/console/\n2.2. Điều hướng đến IAM console.\n2.3. Ở thanh điều hướng bên trái chọn Roles. 2.4. Chọn Create role.\n2.5. Chọn AWS service và chọn EC2. Sau đó chọn Next: Permissions 2.6. Tìm AmazonSSMManagedInstanceCore và chọn nó. Sau đó chọn Next: Tags. 2.7. (Optional) Bạn có thể thêm tag cho role.\n2.8. Nhấn chọn Next: Review.\n2.9. Đặt tên cho Role ở Role Name. Sau đó chọn Create Role. Tạo security group cho public subnet  Chúng ta sẽ tạo security group cho public instance:  Không cần inbound Outbound : cho phép All Traffic tới 0.0.0.0/0     Tạo security group cho private subnet  Chúng ta sẽ tạo security group cho private instance:  Không cần inbound Outbound : cho phép TCP 443 tới 172.31.0.0/16 (CIDR VPC của mình)    Tạo security group cho VPC Endpoint  Chúng ta sẽ tạo security group cho VPC Endpoint:  Inbound: cho phép TCP 443 tới 172.31.0.0/16 (CIDR VPC của mình) Không cần outbound    "
+},
+{
+	"uri": "/vi/3-accessibilitytoinstances/3.2-private-instance/",
+	"title": "Tạo kết nối đến máy chủ EC2 Private",
+	"tags": [],
+	"description": "",
+	"content": "Đối với Windows instance nằm trong private subnet, không có public IP, không có internet gateway nên không thể đi ra ngoài internet.\nVới loại instance này, cách làm truyền thống là ta sẽ sử dụng kỹ thuật Bastion host tốn nhiều chi phí và công sức, nhưng ở đây chúng ta sẽ sử dụng Session Manager với loại này.\nCơ bản là private instance vẫn phải mở cổng TCP 443 tới System Manager, nhưng không cho kết nối đó đi ra ngoài internet mà chỉ cho đi trong chính VPC của mình, nên đảm bảo được vấn đề bảo mật.\nĐể làm được điều đó, ta phải đưa endpoint của System Manager vào trong VPC, nghĩa là sử dụng VPC interface endpoint: VPC interface endpoint được gắn với subnet nên cách làm này không những với private subnet mà còn có thể làm với public subnet, nghĩa là với public subnet, bạn hoàn toàn có thể không cho TCP 443 đi ra ngoài internet.\nNội dung:  Tạo VPC Endpoint Tạo Private Instance  Tạo VPC Endpoint  Chúng ta sẽ tạo 4 interface endpoint và 1 gateway endpoint:\\  Interface endpoint:  com.amazonaws.region.ssm com.amazonaws.region.ec2messages com.amazonaws.region.ec2 com.amazonaws.region.ssmmessages   Gateway endpoint:  com.amazonaws.region.s3     Truy cập đến giao diện VPC chọn Endpoint, sau đó chọn Create Endpoint  Ở phần Service catelogy chọn: AWS services Ở phần Service Name nhập: SSM  Ở phần Subnet, chọn subnet chứa Windows instance Check Enable DNS name  Ở phần Security Group, chọn Security group của private subnet mà chúng ta đã tạo trước đó. Ở phần Policy, chọn Full access  Chúng ta đã tạo xong VPC Interface Endpoint cho SSM, chúng ta cần tạo thêm 3 VPC Interface Endpoint cho các dịch vụ ssmmessages, ec2, ec2messages và VPC Gateway Endpoint cho S3 với cách làm tương tự như trên.   Tạo private instance  Chúng ta sẽ tạo 1 Windows instance nằm trong private subnet có kết nối tới VPC Endpoint vừa tạo ở trên, không có IP public, chọn IAM Role đã tạo cho dịch vụ SSM ở phần đầu.  Kiểm tra lại Security group của Linux instance vừa tạo. Đảm bảo rằng outbound cho phép All Traffice tới 172.31.0.0/16 và không cần inbound.  Sau khi tạo xong Windows instance, trở lại System Manager, chọn tab Session Manager hoặc Fleet Manager và thấy private instance xuất hiện là đã thành công.  Chúng ta sẽ thử kết nối đến Windows instance thông qua SSM   "
+},
+{
+	"uri": "/vi/3-accessibilitytoinstances/",
+	"title": "Tạo kết nối đến máy chủ EC2",
+	"tags": [],
+	"description": "",
+	"content": "Chúng ta sẽ thực hiện tạo kết nối đế máy chủ EC2 Public, máy chủ EC2 Private và tạo S3 để theo dõi session log :\nNội dung 3.1. Tạo Kết nối đến máy chủ EC2 Public\n3.2. Tạo Kết nối đến máy chủ EC2 Private\n3.3. Tạo S3 Bucket để theo dõi session log\n"
+},
+{
+	"uri": "/vi/3-accessibilitytoinstances/3.3-s3forlog/",
+	"title": "Tạo S3 Bucket để theo dõi session logs",
+	"tags": [],
+	"description": "",
+	"content": "\rChúng ta sẽ cấu hình S3 ( Simple Storage Service ) để theo dõi session logs.\n\rNội dung:  Gán AmazonS3FullAccess policy cho IAM Role SSM Tạo S3 Bucket Kiểm tra Session logs trong S3  Gán AmazonS3FullAccess policy cho IAM Role SSM  Quay lại giao diện IAM Role SSM  Chọn Attach Policies  Sau đó, nhập AmazonS3FullAccess vào thanh tìm kiếm và chọn AmazonS3FullAccess  Cuối cùng, nhấn Attach Policy   Tạo S3 Bucket  Truy cập đến giao diện S3, chọn tab Buckets, sau đó nhấn Create Bucket  Ở phần Bucket name: nhập tên bucket. Ở phần AWS Region: chọn Region bạn đang làm bài thực hành.  Bỏ chọn Block all public access. Vì đây là bài thực hành đơn giản nên chúng ta có thể bỏ chặn tất cả quyền truy cập công khai. Trong thực tế, vui lòng xem xét lại vấn đề bảo mật.  Trở lại giao diện Session Manager, chọn tab Preferences và nhấn Edit.  Ở phần Send session logs to S3: chọn Enable Và chọn tên S3 bucket vừa tạo. !  Kiểm tra Session logs trong S3  Chúng ta sẽ kết nối lại Linux instance và thao tác 1 số lệnh đơn giản. Sau quay lại giao diện S3 để xem logs.  Click vào file.log sau đó chọn Download  Chúng ta sẽ xem sesion logs bằng Notepad   "
+},
+{
+	"uri": "/vi/4-portfwd/",
+	"title": "Port Forwarding",
+	"tags": [],
+	"description": "",
+	"content": "\rPort Forwarding là một cách hữu ích để chuyển lưu lượng từ 1 địa chỉ IP này và 1 port đến 1 địa chỉ IP và 1 port khác. Với Port Forwarding, bạn có thể truy cập đến máy ảo EC2 được đặt trong private subnet từ máy chủ của bạn.\n\rChúng ta sẽ thực hành cấu hình Port Forwarding để kết nối RDP giữa máy của chúng ta với Windows instance được đặt trong private instance được tạo ở bước 2.2.  Để thực hành phần này, hãy đảm bảo rằng máy tính của bạn đã cài đặt AWS CLI và Seession Manager Plugin Chạy câu lệnh dưới đây trên máy tính của bạn để cấu hình port forwarding aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber=\u0026quot;3389\u0026quot;,localPortNumber=\u0026quot;9999\u0026quot; --region (your region)    Thực hiện kết nối đến Windows instance bằng Remote Desktop trên máy của bạn.   Quay trở lại giao diện Session manager, chọn tab Session history chúng ta sẽ thấy session log với tên AWS-StartPortForwardingSession   "
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
