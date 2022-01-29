@@ -10,44 +10,14 @@ pre : " <b> 2. </b> "
 Bạn cần tạo sẵn 1 Linux instance thuộc public subnet và 1 Window instance thuộc private subnet để thực hiện bài thực hành này.
 {{% /notice %}}
 
-Để sử dụng System Manager để quản lý window instance nói riêng và các instance nói chung của chúng ta trên AWS, ta cần phải cung cấp quyền cho System Manager truy cập vào instance của chúng ta.
+Để tìm hiểu cách tạo các EC2 instance và VPC với public/private subnet các bạn có thể tham khảo bài lab :
+  - [Giới thiệu về Amazon EC2](https://000004.awsstudygroup.com/vi/)
+  - [Làm việc với Amazon VPC](https://000003.awsstudygroup.com/vi/)
+
+Để sử dụng System Manager để quản lý window instance nói riêng và các instance nói chung của chúng ta trên AWS, ta cần phải cung cấp quyền cho các instance của chúng ta có thể làm việc với System Manager.Trong phần chuẩn bị này, chúng ta cũng sẽ tiến hành tạo IAM Role để cấp quyền cho các instance có thể làm việc với System Manager.
+
 ### Nội dung
-  - [Tạo IAM Role](#tạo-iam-role)
-  - [Tạo security group cho public subnet](#tạo-security-group-cho-public-subnet)
-  - [Tạo security group cho private subnet](#tạo-security-group-cho-private-subnet)
-  - [Tạo security group cho VPC Endpoint](#tạo-security-group-cho-vpc-endpoint)
+  - [Chuẩn bị VPC và EC2 Instance](2.1-createec2/)
+  - [Tạo IAM Role](2.2-createiamrole/)
+
   
-### Tạo IAM Role
-2.1. Đăng nhập vào AWS Console tại https://aws.amazon.com/console/ \
-2.2. Điều hướng đến IAM console.\
-2.3. Ở thanh điều hướng bên trái chọn Roles.
-![role](/images/2.prerequistes/SNA000.png)
-2.4. Chọn Create role.\
-2.5. Chọn AWS service và chọn EC2. Sau đó chọn Next: Permissions 
-![role1](/images/2.prerequistes/SNA001.png)
-2.6. Tìm AmazonSSMManagedInstanceCore và chọn nó. Sau đó chọn Next: Tags.
-![createpolicy](/images/2.prerequistes/SNA003.png)
-2.7. (Optional) Bạn có thể thêm tag cho role.\
-2.8. Nhấn chọn Next: Review.\
-2.9. Đặt tên cho Role ở Role Name. Sau đó chọn Create Role.
-![namerole](/images/2.prerequistes/SNA004.png)
-
-### Tạo security group cho public subnet 
-- Chúng ta sẽ tạo security group cho public instance:
-  - Không cần inbound 
-  - Outbound : cho phép All Traffic tới 0.0.0.0/0
-  ![SG-public](/images/2.prerequistes/SNA005.png) 
-
-### Tạo security group cho private subnet 
-- Chúng ta sẽ tạo security group cho private instance:
-  - Không cần inbound 
-  - Outbound : cho phép TCP 443 tới 172.31.0.0/16 (CIDR VPC của mình)
-   
-![SG-private](/images/2.prerequistes/SNA006.png)
-
-### Tạo security group cho VPC Endpoint
-- Chúng ta sẽ tạo security group cho VPC Endpoint:
-  - Inbound: cho phép TCP 443 tới 172.31.0.0/16 (CIDR VPC của mình)
-  - Không cần outbound
-    
-![SG-private](/images/2.prerequistes/SNA007.png)
