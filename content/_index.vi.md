@@ -4,7 +4,7 @@ date :  "`r Sys.Date()`"
 weight : 1 
 chapter : false
 ---
-# Làm việc với Amazon System Manager - Session Management
+# Làm việc với Amazon System Manager - Session Manager
 
 ### Tổng quan
 
