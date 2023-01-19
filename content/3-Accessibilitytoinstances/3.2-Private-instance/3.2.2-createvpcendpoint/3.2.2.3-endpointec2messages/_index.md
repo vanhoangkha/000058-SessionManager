@@ -14,7 +14,7 @@ pre : " <b> 3.2.2.3 </b> "
   + Click **Create endpoint**.
   
 2. At the **Create endpoint** page.
-  + In the **Name tag** field, enter **SSMMESSAGES**.
+  + In the **Name tag** field, enter **EC2MESSAGES**.
   + In the **Service Category** section, select **AWS Services**.
   + In the **Service Name** section,
   + In the **Service category** select: **AWS services**

@@ -6,6 +6,10 @@ chapter : false
 pre : " <b> 2.1.6 </b> "
 ---
 
+#### Tạo Private EC2 Windows
+
+Bạn tham khảo cách tạo [EC2 Windows](https://000004.awsstudygroup.com/3-launchwindowsinstance/)
+
 1. Truy cập [giao diện quản trị dịch vụ EC2](https://console.aws.amazon.com/ec2/v2/home)
   + Click **Instances**.
   + Click **Launch instances**.

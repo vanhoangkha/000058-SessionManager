@@ -14,7 +14,7 @@ pre : " <b> 3.2.2.3 </b> "
   + Click **Create endpoint**.
   
 2. Tại trang **Create endpoint**.
-  + Tại mục **Name tag** điền **SSMMESSAGES**.
+  + Tại mục **Name tag** điền **EC2MESSAGES**.
   + Tại mục **Service Category** chọn **AWS Services**.
   + Tại mục **Service Name**,
   + Tại mục **Service category** chọn:  **AWS services**

@@ -6,6 +6,10 @@ chapter : false
 pre : " <b> 2.1.5 </b> "
 ---
 
+#### Tạo Public EC2 Linux
+
+Bạn tham khảo cách tạo [EC2 Linux](https://000004.awsstudygroup.com/4-launchlinuxinstance/)
+
 1. Truy cập [giao diện quản trị dịch vụ EC2](https://console.aws.amazon.com/ec2/v2/home)
   + Click **Instances**.
   + Click **Launch instances**.

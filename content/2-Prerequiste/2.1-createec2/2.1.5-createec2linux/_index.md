@@ -6,6 +6,10 @@ chapter : false
 pre : " <b> 2.1.5 </b> "
 ---
 
+#### Create Public EC2 Linux
+
+You refer to how to create [EC2 Linux](https://000004.awsstudygroup.com/4-launchlinuxinstance/)
+
 1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
   + Click **Instances**.
   + Click **Launch instances**.

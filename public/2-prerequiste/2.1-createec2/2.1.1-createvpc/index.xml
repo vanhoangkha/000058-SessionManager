@@ -4,10 +4,6 @@
     <title>Create VPC on AWS System Manager</title>
     <link>/2-prerequiste/2.1-createec2/2.1.1-createvpc/</link>
     <description>Recent content in Create VPC on AWS System Manager</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="/2-prerequiste/2.1-createec2/2.1.1-createvpc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/2-prerequiste/2.1-createec2/2.1.1-createvpc/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

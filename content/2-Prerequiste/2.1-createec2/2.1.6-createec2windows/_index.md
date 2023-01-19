@@ -6,6 +6,10 @@ chapter : false
 pre : " <b> 2.1.6 </b> "
 ---
 
+#### Create Private EC2 Windows
+
+You refer to how to create [EC2 Windows](https://000004.awsstudygroup.com/3-launchwindowsinstance/)
+
 1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
   + Click **Instances**.
   + Click **Launch instances**.
