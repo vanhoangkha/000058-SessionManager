@@ -10,33 +10,24 @@ pre : " <b> 3.2.2.3 </b> "
 #### Tạo VPC Endpoint EC2MESSAGES
 
 1. Truy cập đến [giao diện quản trị của dịch vụ VPC](https://console.aws.amazon.com/vpc/home)
-  + Click **Endpoints**.
-  + Click **Create endpoint**.
+    - Click **Endpoints**.
+    - Click **Create endpoint**.
   
 2. Tại trang **Create endpoint**.
-  + Tại mục **Name tag** điền **EC2MESSAGES**.
-  + Tại mục **Service Category** chọn **AWS Services**.
-  + Tại mục **Service Name**,
-  + Tại mục **Service category** chọn:  **AWS services**
-  + Tại mục **Service Name** nhập: **ec2** sau đó chọn **Service Name: com.amazonaws.ap-southeast-1.ec2messages**.
+    - Tại mục **Name tag** điền **EC2MESSAGES**.
+    - Tại mục **Service Category** chọn **AWS Services**.
+    - Tại mục **Services**,
+    - Tại thanh **Search** nhập: ```.ec2messages```, sau đó chọn **Service Name: com.amazonaws.ap-southeast-1.ec2messages**.
+![Connect](/images/2/52.png)
 
-![Connect](/images/3.connect/015-connect.png)
-
-3. Tại cột **Service Name**, click chọn **com.amazonaws.ap-southeast-1.ec2messages**.
-  + Tại mục **VPC**, chọn **Lab VPC**.
-  + Chọn AZ đầu tiên, sau đó chọn subnet **Lab Private Subnet**.
-  
-![Connect](/images/3.connect/016-connect.png)
+3.  - Tại mục **VPC**, chọn **Lab VPC**.
+    - Chọn AZ đầu tiên, sau đó chọn subnet **Lab Private Subnet**.
+    - Tại mục **Security Group**, chọn Security group **SG VPC Endpoint** mà chúng ta đã tạo trước đó.
+![Connect](/images/2/53.png)
 
 4. Kéo chuột xuống dưới.
-  + Tại mục **Security Group**, chọn Security group **SG VPC Endpoint** mà chúng ta đã tạo trước đó.
-  + Tại mục **Policy**, chọn **Full access**
-
-5. Kéo chuột xuống dưới cùng.
-  + Click **Create endpoint**.
+    - Tại mục **Policy**, chọn **Full access**
+    - Click **Create endpoint**.
 
 6. Chúng ta đã tạo xong VPC Interface Endpoint  **EC2MESSAGES**.
 
-7. Đảm bảo 3 endpoint cần thiết đã được tạo như hình dưới.
-
-![Connect](/images/3.connect/018-connect.png)

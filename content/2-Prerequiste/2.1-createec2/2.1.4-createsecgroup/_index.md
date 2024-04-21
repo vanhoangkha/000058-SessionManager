@@ -13,19 +13,17 @@ In this step, we will proceed to create the security groups used for our instanc
 #### Create security group for Linux instance located in public subnet
 
 1. Go to [VPC service management console](https://console.aws.amazon.com/vpc)
-  + Click **Security Group**.
-  + Click **Create security group**.
-
-![SG](/images/2.prerequisite/019-createsg.png)
+    - Click **Security Group**.
+    - Click **Create security group**.
+![VPC](/images/2/20.png)
 
 3. In the **Security group name** field, enter **SG Public Linux Instance**.
-  + In the **Description** section, enter **SG Public Linux Instance**.
-  + In the **VPC** section, click the **X** to reselect the **Lab VPC** you created for this lab.
-
-![SG](/images/2.prerequisite/020-createsg.png)
+    - In the **Description** section, enter **SG Public Linux Instance**.
+    - In the **VPC** section, click the **X** to reselect the **Lab VPC** you created for this lab.
+![VPC](/images/2/21.png)
 
 4. Keep **Outbound rule**, drag the mouse to the bottom.
-  + Click **Create security group**.
+    - Click **Create security group**.
 
 {{%notice tip%}}
 As you can see, the security group we created to use for Linux public instances will not need to open traditional ports to **ssh** like port **22**.
@@ -35,22 +33,19 @@ As you can see, the security group we created to use for Linux public instances 
 #### Create a security group for a Windows instance located in a private subnet
 
 1. After successfully creating a security group for the Linux instance located in the public subnet, click the Security Groups link to return to the Security groups list.
-
-![SG](/images/2.prerequisite/021-createsg.png)
+![VPC](/images/2/22.png)
 
 2. Click **Create security group**.
 
 3. In the **Security group name** field, enter **SG Private Windows Instance**.
-  + In the **Description** section, enter **SG Private Windows Instance**.
-  + In the **VPC** section, click the **X** to reselect the **Lab VPC** you created for this lab.
-
-![SG](/images/2.prerequisite/022-createsg.png)
+    - In the **Description** section, enter **SG Private Windows Instance**.
+    - In the **VPC** section, click the **X** to reselect the **Lab VPC** you created for this lab.
+![VPC](/images/2/23.png)
 
 4. Scroll down.
-  + Add **Outbound rule** to allow TCP 443 connection to 10.10.0.0/16 ( CIDR of **Lab VPC** we created)
-  + Click **Create security group**.
-
-![SG](/images/2.prerequisite/023-createsg.png)
+    - Add **Outbound rule** to allow TCP 443 connection to 10.10.0.0/16 ( CIDR of **Lab VPC** we created)
+    - Click **Create security group**.
+![VPC](/images/2/24.png)
 
 {{%notice tip%}}
 For the Instance in the private subnet, we will connect to the **Session Manager** endpoint over a TLS encrypted connection, so we need to allow outbound connection from our instance to VPC CIDR through port 443.
@@ -63,19 +58,16 @@ For the Instance in the private subnet, we will connect to the **Session Manager
 2. After successfully creating the security group for the Windows instance in the private subnet, click the Security Groups link to return to the Security groups list.
 3. Click **Create security group**.
 4. In the **Security group name** field, enter **SG VPC Endpoint**.
-  + In the **Description** section, enter **SG VPC Endpoint**.
-  + In the **VPC** section, click the **X** to reselect the **Lab VPC** you created for this lab.
-
-![SG](/images/2.prerequisite/024-createsg.png)
+    - In the **Description** section, enter **SG VPC Endpoint**.
+    - In the **VPC** section, click the **X** to reselect the **Lab VPC** you created for this lab.
+![VPC](/images/2/25.png)
 
 5. Scroll down.
-  + Delete **Outbound rule**.
-  
-![SG](/images/2.prerequisite/025-createsg.png)
+    - Delete **Outbound rule**.
+![VPC](/images/2/26.png)
 
 6. Add **Inbound rule** allowing TCP 443 to come from 10.10.0.0/16 ( CIDR of **Lab VPC** we created ).
-  + Click **Create security group**.
-
-![SG](/images/2.prerequisite/026-createsg.png)
+    - Click **Create security group**.
+![VPC](/images/2/27.png)
 
 So we are done creating the necessary security groups for EC2 instances and VPC Endpoints.

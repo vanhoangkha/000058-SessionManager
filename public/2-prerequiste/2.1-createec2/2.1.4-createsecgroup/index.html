@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.122.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Create security groups :: WORK WITH AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1701078502" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701078502" rel="stylesheet">
-    <link href="/css/hybrid.css?1701078502" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701078502" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701078502" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701078502" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701078502" rel="stylesheet">
-    <link href="/css/theme.css?1701078502" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701078502" rel="stylesheet">
+    <link href="/css/nucleus.css?1713719835" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713719835" rel="stylesheet">
+    <link href="/css/hybrid.css?1713719835" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713719835" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713719835" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713719835" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713719835" rel="stylesheet">
+    <link href="/css/theme.css?1713719835" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713719835" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701078502" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713719835" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701078502"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713719835"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701078502"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701078502"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713719835"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713719835"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701078502"></script>
+<script type="text/javascript" src="/js/search.js?1713719835"></script>
 
     
   </div>
@@ -255,7 +255,7 @@
   
     
     <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/" title="Create security groups" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -850,7 +850,7 @@
         
         ">
       <a href="/6-cleanup/">
-          <b>6. </b>Clean up resources
+           <b> 6. </b> Clean up resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -953,7 +953,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>27-11-2023</font></i>
+        <i><font color=orange>23-04-2024</font></i>
     </left>
     <left>
         <br>
@@ -1062,87 +1062,97 @@
 <p>In this step, we will proceed to create the security groups used for our instances. As you can see, these security groups will not need to open traditional ports to <strong>ssh</strong> like port <strong>22</strong> or <strong>remote desktop</strong> through port <strong>3389</strong>.</p>
 <h4 id="create-security-group-for-linux-instance-located-in-public-subnet">Create security group for Linux instance located in public subnet</h4>
 <ol>
-<li>Go to <a href="https://console.aws.amazon.com/vpc">VPC service management console</a></li>
-</ol>
+<li>
+<p>Go to <a href="https://console.aws.amazon.com/vpc">VPC service management console</a></p>
 <ul>
 <li>Click <strong>Security Group</strong>.</li>
-<li>Click <strong>Create security group</strong>.</li>
+<li>Click <strong>Create security group</strong>.
+<img src="/images/2/20.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/019-createsg.png" alt="SG"></p>
-<ol start="3">
-<li>In the <strong>Security group name</strong> field, enter <strong>SG Public Linux Instance</strong>.</li>
-</ol>
+</li>
+<li>
+<p>In the <strong>Security group name</strong> field, enter <strong>SG Public Linux Instance</strong>.</p>
 <ul>
 <li>In the <strong>Description</strong> section, enter <strong>SG Public Linux Instance</strong>.</li>
-<li>In the <strong>VPC</strong> section, click the <strong>X</strong> to reselect the <strong>Lab VPC</strong> you created for this lab.</li>
+<li>In the <strong>VPC</strong> section, click the <strong>X</strong> to reselect the <strong>Lab VPC</strong> you created for this lab.
+<img src="/images/2/21.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/020-createsg.png" alt="SG"></p>
-<ol start="4">
-<li>Keep <strong>Outbound rule</strong>, drag the mouse to the bottom.</li>
-</ol>
+</li>
+<li>
+<p>Keep <strong>Outbound rule</strong>, drag the mouse to the bottom.</p>
 <ul>
 <li>Click <strong>Create security group</strong>.</li>
 </ul>
+</li>
+</ol>
 
 <div class="notices tip" ><p>As you can see, the security group we created to use for Linux public instances will not need to open traditional ports to <strong>ssh</strong> like port <strong>22</strong>.</p>
 </div>
 
 <h4 id="create-a-security-group-for-a-windows-instance-located-in-a-private-subnet">Create a security group for a Windows instance located in a private subnet</h4>
 <ol>
-<li>After successfully creating a security group for the Linux instance located in the public subnet, click the Security Groups link to return to the Security groups list.</li>
-</ol>
-<p><img src="/images/2.prerequisite/021-createsg.png" alt="SG"></p>
-<ol start="2">
+<li>
+<p>After successfully creating a security group for the Linux instance located in the public subnet, click the Security Groups link to return to the Security groups list.
+<img src="/images/2/22.png" alt="VPC"></p>
+</li>
 <li>
 <p>Click <strong>Create security group</strong>.</p>
 </li>
 <li>
 <p>In the <strong>Security group name</strong> field, enter <strong>SG Private Windows Instance</strong>.</p>
-</li>
-</ol>
 <ul>
 <li>In the <strong>Description</strong> section, enter <strong>SG Private Windows Instance</strong>.</li>
-<li>In the <strong>VPC</strong> section, click the <strong>X</strong> to reselect the <strong>Lab VPC</strong> you created for this lab.</li>
+<li>In the <strong>VPC</strong> section, click the <strong>X</strong> to reselect the <strong>Lab VPC</strong> you created for this lab.
+<img src="/images/2/23.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/022-createsg.png" alt="SG"></p>
-<ol start="4">
-<li>Scroll down.</li>
-</ol>
+</li>
+<li>
+<p>Scroll down.</p>
 <ul>
 <li>Add <strong>Outbound rule</strong> to allow TCP 443 connection to 10.10.0.0/16 ( CIDR of <strong>Lab VPC</strong> we created)</li>
-<li>Click <strong>Create security group</strong>.</li>
+<li>Click <strong>Create security group</strong>.
+<img src="/images/2/24.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/023-createsg.png" alt="SG"></p>
+</li>
+</ol>
 
 <div class="notices tip" ><p>For the Instance in the private subnet, we will connect to the <strong>Session Manager</strong> endpoint over a TLS encrypted connection, so we need to allow outbound connection from our instance to VPC CIDR through port 443.</p>
 </div>
 
 <h4 id="create-security-group-for-vpc-endpoint">Create security group for VPC Endpoint</h4>
 <ol>
-<li>In this step, we will create security group for VPC Endpoint of <strong>Session Manager</strong>.</li>
-<li>After successfully creating the security group for the Windows instance in the private subnet, click the Security Groups link to return to the Security groups list.</li>
-<li>Click <strong>Create security group</strong>.</li>
-<li>In the <strong>Security group name</strong> field, enter <strong>SG VPC Endpoint</strong>.</li>
-</ol>
+<li>
+<p>In this step, we will create security group for VPC Endpoint of <strong>Session Manager</strong>.</p>
+</li>
+<li>
+<p>After successfully creating the security group for the Windows instance in the private subnet, click the Security Groups link to return to the Security groups list.</p>
+</li>
+<li>
+<p>Click <strong>Create security group</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Security group name</strong> field, enter <strong>SG VPC Endpoint</strong>.</p>
 <ul>
 <li>In the <strong>Description</strong> section, enter <strong>SG VPC Endpoint</strong>.</li>
-<li>In the <strong>VPC</strong> section, click the <strong>X</strong> to reselect the <strong>Lab VPC</strong> you created for this lab.</li>
+<li>In the <strong>VPC</strong> section, click the <strong>X</strong> to reselect the <strong>Lab VPC</strong> you created for this lab.
+<img src="/images/2/25.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/024-createsg.png" alt="SG"></p>
-<ol start="5">
-<li>Scroll down.</li>
-</ol>
+</li>
+<li>
+<p>Scroll down.</p>
 <ul>
-<li>Delete <strong>Outbound rule</strong>.</li>
+<li>Delete <strong>Outbound rule</strong>.
+<img src="/images/2/26.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/025-createsg.png" alt="SG"></p>
-<ol start="6">
-<li>Add <strong>Inbound rule</strong> allowing TCP 443 to come from 10.10.0.0/16 ( CIDR of <strong>Lab VPC</strong> we created ).</li>
-</ol>
+</li>
+<li>
+<p>Add <strong>Inbound rule</strong> allowing TCP 443 to come from 10.10.0.0/16 ( CIDR of <strong>Lab VPC</strong> we created ).</p>
 <ul>
-<li>Click <strong>Create security group</strong>.</li>
+<li>Click <strong>Create security group</strong>.
+<img src="/images/2/27.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/026-createsg.png" alt="SG"></p>
+</li>
+</ol>
 <p>So we are done creating the necessary security groups for EC2 instances and VPC Endpoints.</p>
 
 
@@ -1641,19 +1651,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701078502"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701078502"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701078502"></script>
-    <script src="/js/jquery.sticky.js?1701078502"></script>
-    <script src="/js/featherlight.min.js?1701078502"></script>
-    <script src="/js/highlight.pack.js?1701078502"></script>
+    <script src="/js/clipboard.min.js?1713719835"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713719835"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713719835"></script>
+    <script src="/js/jquery.sticky.js?1713719835"></script>
+    <script src="/js/featherlight.min.js?1713719835"></script>
+    <script src="/js/highlight.pack.js?1713719835"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701078502"></script>
-    <script src="/js/learn.js?1701078502"></script>
-    <script src="/js/hugo-learn.js?1701078502"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713719835"></script>
+    <script src="/js/learn.js?1713719835"></script>
+    <script src="/js/hugo-learn.js?1713719835"></script>
 
-    <link href="/mermaid/mermaid.css?1701078502" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701078502"></script>
+    <link href="/mermaid/mermaid.css?1713719835" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713719835"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

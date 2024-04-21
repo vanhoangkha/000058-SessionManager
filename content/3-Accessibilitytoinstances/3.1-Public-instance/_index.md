@@ -8,38 +8,33 @@ pre : " <b> 3.1. </b> "
 ![SSMPublicinstance](/images/arc-02.png)
 
 1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
-  + Click on **Public Linux Instance**.
-  + Click **Actions**.
-  + Click **Security**.
-  + Click **Modify IAM role**.
-
-![Connect](/images/3.connect/001-connect.png)
+    - Click on **Public Linux Instance**.
+    - Click **Actions**.
+    - Click **Security**.
+    - Click **Modify IAM role**.
+![Connect](/images/2/39.png)
 
 2. At the Modify IAM role page.
-  + Click to select **SSM-Role**.
-  + Click **Save**.
-
+    - Click to select **SSM-Role**.
+    - Click **Update IAM role**.
+![Connect](/images/2/40.png)
 {{% notice note %}}
 You will need to wait about 10 minutes before performing the next step. This time our EC2 instance will automatically register with the Session Manager.
 {{% /notice %}}
 
 3. Go to the [AWS Systems Manager service management console](https://console.aws.amazon.com/systems-manager/home)
-  + Drag the left menu slider down.
-  + Click **Session Manager**.
-  + Click **Start Session**.
-
-
-![Connect](/images/3.connect/002-connect.png)
+    - Drag the left menu slider down.
+    - Click **Session Manager**.
+    - Click **Start Session**.
+![Connect](/images/2/41.png)
 
 
 4. Then select **Public Linux Instance** and click **Start session** to access the instance.
-
-![Connect](/images/3.connect/003-connect.png)
+![Connect](/images/2/42.png)
 
 
 5. Terminal will appear on the browser. Testing with the command ``` sudo tcpdump -nn port 22 ``` and ```sudo tcpdump ``` we will see no SSH traffic but only HTTPS traffic.
-
-![Connect](/images/3.connect/004-connect.png)
+![Connect](/images/2/43.png)
 
 {{% notice note %}}
  Above, we have created a connection to the public instance without opening SSH port 22, for better security, avoiding any attack to the SSH port.\

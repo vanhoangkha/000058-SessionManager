@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.122.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Tạo các security group :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1701078502" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701078502" rel="stylesheet">
-    <link href="/css/hybrid.css?1701078502" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701078502" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701078502" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701078502" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701078502" rel="stylesheet">
-    <link href="/css/theme.css?1701078502" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701078502" rel="stylesheet">
+    <link href="/css/nucleus.css?1713719835" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713719835" rel="stylesheet">
+    <link href="/css/hybrid.css?1713719835" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713719835" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713719835" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713719835" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713719835" rel="stylesheet">
+    <link href="/css/theme.css?1713719835" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713719835" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701078502" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713719835" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701078502"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713719835"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701078502"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701078502"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713719835"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713719835"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701078502"></script>
+<script type="text/javascript" src="/js/search.js?1713719835"></script>
 
     
   </div>
@@ -255,7 +255,7 @@
   
     
     <li data-nav-id="/vi/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/" title="Tạo các security group" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -953,7 +953,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>27-11-2023</font></i>
+        <i><font color=orange>23-04-2024</font></i>
     </left>
     <left>
         <br>
@@ -1062,87 +1062,97 @@
 <p>Trong bước này chúng ta sẽ tiến hành tạo các security group được sử dụng cho các instance của chúng ta. Các bạn có thể thấy, các securiy group này sẽ không cần phải mở các port truyền thống để <strong>ssh</strong> như port <strong>22</strong> hoặc <strong>remote desktop</strong> thông qua port <strong>3389</strong>.</p>
 <h4 id="tạo-security-group-cho-linux-instance-nằm-trong-public-subnet">Tạo security group cho Linux instance nằm trong public subnet</h4>
 <ol>
-<li>Truy cập <a href="https://console.aws.amazon.com/vpc">giao diện quản trị dịch vụ VPC</a></li>
-</ol>
+<li>
+<p>Truy cập <a href="https://console.aws.amazon.com/vpc">giao diện quản trị dịch vụ VPC</a></p>
 <ul>
 <li>Click <strong>Security Group</strong>.</li>
-<li>Click <strong>Create security group</strong>.</li>
+<li>Click <strong>Create security group</strong>.
+<img src="/images/2/20.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/019-createsg.png" alt="SG"></p>
-<ol start="3">
-<li>Tại mục <strong>Security group name</strong>, điền <strong>SG Public Linux Instance</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Tại mục <strong>Security group name</strong>, điền <strong>SG Public Linux Instance</strong>.</p>
 <ul>
 <li>Tại mục <strong>Description</strong>, điền <strong>SG Public Linux Instance</strong>.</li>
-<li>Tại mục <strong>VPC</strong>, click dấu <strong>X</strong> để chọn lại <strong>Lab VPC</strong> bạn đã tạo cho bài lab này.</li>
+<li>Tại mục <strong>VPC</strong>, click dấu <strong>X</strong> để chọn lại <strong>Lab VPC</strong> bạn đã tạo cho bài lab này.
+<img src="/images/2/21.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/020-createsg.png" alt="SG"></p>
-<ol start="4">
-<li>Giữ nguyên <strong>Outbound rule</strong>, kéo chuột xuống phía dưới.</li>
-</ol>
+</li>
+<li>
+<p>Giữ nguyên <strong>Outbound rule</strong>, kéo chuột xuống phía dưới.</p>
 <ul>
 <li>Click <strong>Create security group</strong>.</li>
 </ul>
+</li>
+</ol>
 
 <div class="notices tip" ><p>Các bạn có thể thấy, security group chúng ta tạo sử dụng cho Linux public instance sẽ không cần phải mở các port truyền thống để <strong>ssh</strong> như port <strong>22</strong>.</p>
 </div>
 
 <h4 id="tạo-security-group-cho-windows-instance-nằm-trong-private-subnet">Tạo security group cho Windows instance nằm trong private subnet</h4>
 <ol>
-<li>Sau khi tạo thành công security group cho Linux instance nằm trong public subnet, click vào link Security Groups để quay trở lại danh sách Security groups.</li>
-</ol>
-<p><img src="/images/2.prerequisite/021-createsg.png" alt="SG"></p>
-<ol start="2">
+<li>
+<p>Sau khi tạo thành công security group cho Linux instance nằm trong public subnet, click vào link Security Groups để quay trở lại danh sách Security groups.
+<img src="/images/2/22.png" alt="VPC"></p>
+</li>
 <li>
 <p>Click <strong>Create security group</strong>.</p>
 </li>
 <li>
 <p>Tại mục <strong>Security group name</strong>, điền <strong>SG Private Windows Instance</strong>.</p>
-</li>
-</ol>
 <ul>
 <li>Tại mục <strong>Description</strong>, điền <strong>SG Private Windows Instance</strong>.</li>
-<li>Tại mục <strong>VPC</strong>, click dấu <strong>X</strong> để chọn lại <strong>Lab VPC</strong> bạn đã tạo cho bài lab này.</li>
+<li>Tại mục <strong>VPC</strong>, click dấu <strong>X</strong> để chọn lại <strong>Lab VPC</strong> bạn đã tạo cho bài lab này.
+<img src="/images/2/23.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/022-createsg.png" alt="SG"></p>
-<ol start="4">
-<li>Kéo chuột xuống phía dưới.</li>
-</ol>
+</li>
+<li>
+<p>Kéo chuột xuống phía dưới.</p>
 <ul>
 <li>Thêm <strong>Outbound rule</strong> cho phép kết nối TCP 443 tới 10.10.0.0/16 ( CIDR của <strong>Lab VPC</strong> chúng ta đã tạo)</li>
-<li>Click <strong>Create security group</strong>.</li>
+<li>Click <strong>Create security group</strong>.
+<img src="/images/2/24.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/023-createsg.png" alt="SG"></p>
+</li>
+</ol>
 
 <div class="notices tip" ><p>Đối với Instance trong private subnet, chúng ta sẽ kết nối tới endpoint của <strong>Session Manager</strong> qua kết nối đã được mã hóa TLS. vì thế chúng ta cần cho phép kết nối chiều ra từ instance của mình tới VPC CIDR thông qua port 443.</p>
 </div>
 
 <h4 id="tạo-security-group-cho-vpc-endpoint">Tạo security group cho VPC Endpoint</h4>
 <ol>
-<li>Trong bước này, chúng ta sẽ tạo security group cho VPC Endpoint của <strong>Session Manager</strong>.</li>
-<li>Sau khi tạo thành công security group cho Windows instance trong private subnet, click vào link Security Groups để quay trở lại danh sách Security groups.</li>
-<li>Click <strong>Create security group</strong>.</li>
-<li>Tại mục <strong>Security group name</strong>, điền <strong>SG VPC Endpoint</strong>.</li>
-</ol>
+<li>
+<p>Trong bước này, chúng ta sẽ tạo security group cho VPC Endpoint của <strong>Session Manager</strong>.</p>
+</li>
+<li>
+<p>Sau khi tạo thành công security group cho Windows instance trong private subnet, click vào link Security Groups để quay trở lại danh sách Security groups.</p>
+</li>
+<li>
+<p>Click <strong>Create security group</strong>.</p>
+</li>
+<li>
+<p>Tại mục <strong>Security group name</strong>, điền <strong>SG VPC Endpoint</strong>.</p>
 <ul>
 <li>Tại mục <strong>Description</strong>, điền <strong>SG VPC Endpoint</strong>.</li>
-<li>Tại mục <strong>VPC</strong>, click dấu <strong>X</strong> để chọn lại <strong>Lab VPC</strong> bạn đã tạo cho bài lab này.</li>
+<li>Tại mục <strong>VPC</strong>, click dấu <strong>X</strong> để chọn lại <strong>Lab VPC</strong> bạn đã tạo cho bài lab này.
+<img src="/images/2/25.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/024-createsg.png" alt="SG"></p>
-<ol start="5">
-<li>Kéo chuột xuống phía dưới.</li>
-</ol>
+</li>
+<li>
+<p>Kéo chuột xuống phía dưới.</p>
 <ul>
-<li>Xóa <strong>Outbound rule</strong>.</li>
+<li>Xóa <strong>Outbound rule</strong>.
+<img src="/images/2/26.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/025-createsg.png" alt="SG"></p>
-<ol start="6">
-<li>Thêm <strong>Inbound rule</strong> cho phép TCP 443 đến từ 10.10.0.0/16 ( CIDR của <strong>Lab VPC</strong> chúng ta đã tạo ).</li>
-</ol>
+</li>
+<li>
+<p>Thêm <strong>Inbound rule</strong> cho phép TCP 443 đến từ 10.10.0.0/16 ( CIDR của <strong>Lab VPC</strong> chúng ta đã tạo ).</p>
 <ul>
-<li>Click <strong>Create security group</strong>.</li>
+<li>Click <strong>Create security group</strong>.
+<img src="/images/2/27.png" alt="VPC"></li>
 </ul>
-<p><img src="/images/2.prerequisite/026-createsg.png" alt="SG"></p>
+</li>
+</ol>
 <p>Như vậy chúng ta đã tiến hành xong việc tạo các security group cần thiết cho các EC2 instance và VPC Endpoint.</p>
 
 
@@ -1641,19 +1651,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701078502"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701078502"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701078502"></script>
-    <script src="/js/jquery.sticky.js?1701078502"></script>
-    <script src="/js/featherlight.min.js?1701078502"></script>
-    <script src="/js/highlight.pack.js?1701078502"></script>
+    <script src="/js/clipboard.min.js?1713719835"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713719835"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713719835"></script>
+    <script src="/js/jquery.sticky.js?1713719835"></script>
+    <script src="/js/featherlight.min.js?1713719835"></script>
+    <script src="/js/highlight.pack.js?1713719835"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701078502"></script>
-    <script src="/js/learn.js?1701078502"></script>
-    <script src="/js/hugo-learn.js?1701078502"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713719835"></script>
+    <script src="/js/learn.js?1713719835"></script>
+    <script src="/js/hugo-learn.js?1713719835"></script>
 
-    <link href="/mermaid/mermaid.css?1701078502" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701078502"></script>
+    <link href="/mermaid/mermaid.css?1713719835" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713719835"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

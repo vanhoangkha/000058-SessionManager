@@ -9,17 +9,15 @@ pre : " <b> 2.1.3 </b> "
 #### Tạo Private subnet
 
 1. Click **Subnets**.
-  + Click **Create subnet**.
-
-![VPC](/images/2.prerequisite/017-createsubnet.png)
+  - Click **Create subnet**.
+![VPC](/images/2/18.png)
 
 2. Tại trang **Create subnet**.
-  + Tại mục **VPC ID** click chọn **Lab VPC**.
-  + Tại mục **Subnet name** điền **Lab Private Subnet**.
-  + Tại mục **Availability Zone** chọn Availability zone đầu tiên.
-  + Tại mục **IPv4 CIRD block** điền **10.10.2.0/24**.
-
-![VPC](/images/2.prerequisite/018-createsubnet.png)
+  - Tại mục **VPC ID** click chọn **Lab VPC**.
+  - Tại mục **Subnet name** điền **Lab Private Subnet**.
+  - Tại mục **Availability Zone** chọn Availability zone đầu tiên.
+  - Tại mục **IPv4 CIRD block** điền **10.10.2.0/24**.
+![VPC](/images/2/19.png)
 
 3. Kéo xuống cuối trang , click **Create subnet**.
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.122.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Tạo Endpoint ec2messages :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1701078502" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701078502" rel="stylesheet">
-    <link href="/css/hybrid.css?1701078502" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701078502" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701078502" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701078502" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701078502" rel="stylesheet">
-    <link href="/css/theme.css?1701078502" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701078502" rel="stylesheet">
+    <link href="/css/nucleus.css?1713719835" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713719835" rel="stylesheet">
+    <link href="/css/hybrid.css?1713719835" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713719835" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713719835" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713719835" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713719835" rel="stylesheet">
+    <link href="/css/theme.css?1713719835" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713719835" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701078502" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713719835" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701078502"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713719835"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701078502"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701078502"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713719835"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713719835"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701078502"></script>
+<script type="text/javascript" src="/js/search.js?1713719835"></script>
 
     
   </div>
@@ -588,7 +588,7 @@
   
     
     <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/" title="Tạo Endpoint ec2messages" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -953,7 +953,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>27-11-2023</font></i>
+        <i><font color=orange>23-04-2024</font></i>
     </left>
     <left>
         <br>
@@ -1066,53 +1066,42 @@
 
 	<h4 id="tạo-vpc-endpoint-ec2messages">Tạo VPC Endpoint EC2MESSAGES</h4>
 <ol>
-<li>Truy cập đến <a href="https://console.aws.amazon.com/vpc/home">giao diện quản trị của dịch vụ VPC</a></li>
-</ol>
+<li>
+<p>Truy cập đến <a href="https://console.aws.amazon.com/vpc/home">giao diện quản trị của dịch vụ VPC</a></p>
 <ul>
 <li>Click <strong>Endpoints</strong>.</li>
 <li>Click <strong>Create endpoint</strong>.</li>
 </ul>
-<ol start="2">
-<li>Tại trang <strong>Create endpoint</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Tại trang <strong>Create endpoint</strong>.</p>
 <ul>
 <li>Tại mục <strong>Name tag</strong> điền <strong>EC2MESSAGES</strong>.</li>
 <li>Tại mục <strong>Service Category</strong> chọn <strong>AWS Services</strong>.</li>
-<li>Tại mục <strong>Service Name</strong>,</li>
-<li>Tại mục <strong>Service category</strong> chọn:  <strong>AWS services</strong></li>
-<li>Tại mục <strong>Service Name</strong> nhập: <strong>ec2</strong> sau đó chọn <strong>Service Name: com.amazonaws.ap-southeast-1.ec2messages</strong>.</li>
+<li>Tại mục <strong>Services</strong>,</li>
+<li>Tại thanh <strong>Search</strong> nhập: <code>.ec2messages</code>, sau đó chọn <strong>Service Name: com.amazonaws.ap-southeast-1.ec2messages</strong>.
+<img src="/images/2/52.png" alt="Connect"></li>
 </ul>
-<p><img src="/images/3.connect/015-connect.png" alt="Connect"></p>
-<ol start="3">
-<li>Tại cột <strong>Service Name</strong>, click chọn <strong>com.amazonaws.ap-southeast-1.ec2messages</strong>.</li>
-</ol>
+</li>
+<li>
 <ul>
 <li>Tại mục <strong>VPC</strong>, chọn <strong>Lab VPC</strong>.</li>
 <li>Chọn AZ đầu tiên, sau đó chọn subnet <strong>Lab Private Subnet</strong>.</li>
+<li>Tại mục <strong>Security Group</strong>, chọn Security group <strong>SG VPC Endpoint</strong> mà chúng ta đã tạo trước đó.
+<img src="/images/2/53.png" alt="Connect"></li>
 </ul>
-<p><img src="/images/3.connect/016-connect.png" alt="Connect"></p>
-<ol start="4">
-<li>Kéo chuột xuống dưới.</li>
-</ol>
+</li>
+<li>
+<p>Kéo chuột xuống dưới.</p>
 <ul>
-<li>Tại mục <strong>Security Group</strong>, chọn Security group <strong>SG VPC Endpoint</strong> mà chúng ta đã tạo trước đó.</li>
 <li>Tại mục <strong>Policy</strong>, chọn <strong>Full access</strong></li>
-</ul>
-<ol start="5">
-<li>Kéo chuột xuống dưới cùng.</li>
-</ol>
-<ul>
 <li>Click <strong>Create endpoint</strong>.</li>
 </ul>
-<ol start="6">
+</li>
 <li>
 <p>Chúng ta đã tạo xong VPC Interface Endpoint  <strong>EC2MESSAGES</strong>.</p>
 </li>
-<li>
-<p>Đảm bảo 3 endpoint cần thiết đã được tạo như hình dưới.</p>
-</li>
 </ol>
-<p><img src="/images/3.connect/018-connect.png" alt="Connect"></p>
 
 
 
@@ -1617,19 +1606,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701078502"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701078502"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701078502"></script>
-    <script src="/js/jquery.sticky.js?1701078502"></script>
-    <script src="/js/featherlight.min.js?1701078502"></script>
-    <script src="/js/highlight.pack.js?1701078502"></script>
+    <script src="/js/clipboard.min.js?1713719835"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713719835"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713719835"></script>
+    <script src="/js/jquery.sticky.js?1713719835"></script>
+    <script src="/js/featherlight.min.js?1713719835"></script>
+    <script src="/js/highlight.pack.js?1713719835"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701078502"></script>
-    <script src="/js/learn.js?1701078502"></script>
-    <script src="/js/hugo-learn.js?1701078502"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713719835"></script>
+    <script src="/js/learn.js?1713719835"></script>
+    <script src="/js/hugo-learn.js?1713719835"></script>
 
-    <link href="/mermaid/mermaid.css?1701078502" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701078502"></script>
+    <link href="/mermaid/mermaid.css?1713719835" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713719835"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
