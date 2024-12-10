@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Preparing VPC and EC2 :: WORK WITH AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1713720038" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713720038" rel="stylesheet">
-    <link href="/css/hybrid.css?1713720038" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713720038" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713720038" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713720038" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713720038" rel="stylesheet">
-    <link href="/css/theme.css?1713720038" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713720038" rel="stylesheet">
+    <link href="/css/nucleus.css?1733804842" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1733804842" rel="stylesheet">
+    <link href="/css/hybrid.css?1733804842" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1733804842" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1733804842" rel="stylesheet">
+    <link href="/css/auto-complete.css?1733804842" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1733804842" rel="stylesheet">
+    <link href="/css/theme.css?1733804842" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1733804842" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713720038" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1733804842" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713720038"></script>
+    <script src="/js/jquery-3.3.1.min.js?1733804842"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713720038"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713720038"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1733804842"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1733804842"></script>
 <script type="text/javascript">
     
-        var baseurl = "";
+        var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713720038"></script>
+<script type="text/javascript" src="/js/search.js?1733804842"></script>
 
     
   </div>
@@ -953,7 +953,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>23-04-2024</font></i>
+        <i><font color=orange>10-12-2024</font></i>
     </left>
     <left>
         <br>
@@ -1054,7 +1054,7 @@
 
 	<p>In this step, we will need to create a VPC with 2 public / private subnets. Then create 1 EC2 Instance Linux located in the public subnet, 1 EC2 Instance Windows located in the private subnet.</p>
 <p>The architecture overview after you complete this step will be as follows:</p>
-<p><img src="/images/arc-01.png" alt="VPC"></p>
+<p><img alt="VPC" src="/images/arc-01.png"></p>
 <p>To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:</p>
 <ul>
 <li><a href="https://000004.awsstudygroup.com/en/">About Amazon EC2</a></li>
@@ -1062,12 +1062,12 @@
 </ul>
 <h3 id="content">Content</h3>
 <ul>
-<li><a href="2.1.1-createvpc/">Create VPC</a></li>
-<li><a href="2.1.2-createpublicsubnet/">Create Public Subnet</a></li>
-<li><a href="2.1.3-createprivatesubnet/">Create Private Subnet</a></li>
-<li><a href="2.1.4-createsecgroup/">Create security group</a></li>
-<li><a href="2.1.5-createec2linux/">Create public Linux server</a></li>
-<li><a href="2.1.6-createec2windows/">Create private Windows server</a></li>
+<li><a href="/2-prerequiste/2.1-createec2/2.1.1-createvpc/">Create VPC</a></li>
+<li><a href="/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/">Create Public Subnet</a></li>
+<li><a href="/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/">Create Private Subnet</a></li>
+<li><a href="/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/">Create security group</a></li>
+<li><a href="/2-prerequiste/2.1-createec2/2.1.5-createec2linux/">Create public Linux server</a></li>
+<li><a href="/2-prerequiste/2.1-createec2/2.1.6-createec2windows/">Create private Windows server</a></li>
 </ul>
 
 
@@ -1562,19 +1562,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713720038"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713720038"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713720038"></script>
-    <script src="/js/jquery.sticky.js?1713720038"></script>
-    <script src="/js/featherlight.min.js?1713720038"></script>
-    <script src="/js/highlight.pack.js?1713720038"></script>
+    <script src="/js/clipboard.min.js?1733804842"></script>
+    <script src="/js/perfect-scrollbar.min.js?1733804842"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1733804842"></script>
+    <script src="/js/jquery.sticky.js?1733804842"></script>
+    <script src="/js/featherlight.min.js?1733804842"></script>
+    <script src="/js/highlight.pack.js?1733804842"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713720038"></script>
-    <script src="/js/learn.js?1713720038"></script>
-    <script src="/js/hugo-learn.js?1713720038"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1733804842"></script>
+    <script src="/js/learn.js?1733804842"></script>
+    <script src="/js/hugo-learn.js?1733804842"></script>
 
-    <link href="/mermaid/mermaid.css?1713720038" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713720038"></script>
+    <link href="/mermaid/mermaid.css?1733804842" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1733804842"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

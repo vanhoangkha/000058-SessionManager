@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Tạo Public subnet :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1713720038" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713720038" rel="stylesheet">
-    <link href="/css/hybrid.css?1713720038" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713720038" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713720038" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713720038" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713720038" rel="stylesheet">
-    <link href="/css/theme.css?1713720038" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713720038" rel="stylesheet">
+    <link href="/css/nucleus.css?1733804842" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1733804842" rel="stylesheet">
+    <link href="/css/hybrid.css?1733804842" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1733804842" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1733804842" rel="stylesheet">
+    <link href="/css/auto-complete.css?1733804842" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1733804842" rel="stylesheet">
+    <link href="/css/theme.css?1733804842" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1733804842" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713720038" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1733804842" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713720038"></script>
+    <script src="/js/jquery-3.3.1.min.js?1733804842"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713720038"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713720038"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1733804842"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1733804842"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713720038"></script>
+<script type="text/javascript" src="/js/search.js?1733804842"></script>
 
     
   </div>
@@ -953,7 +953,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>23-04-2024</font></i>
+        <i><font color=orange>10-12-2024</font></i>
     </left>
     <left>
         <br>
@@ -1064,7 +1064,7 @@
 <p>Click <strong>Subnets</strong>.</p>
 <ul>
 <li>Click <strong>Create subnet</strong>.
-<img src="/images/2/3.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/3.png"></li>
 </ul>
 </li>
 <li>
@@ -1074,7 +1074,7 @@
 <li>Tại mục <strong>Subnet name</strong> điền <strong>Lab Public Subnet</strong>.</li>
 <li>Tại mục <strong>Availability Zone</strong> chọn Availability zone đầu tiên.</li>
 <li>Tại mục <strong>IPv4 CIRD block</strong> điền <strong>10.10.1.0/24</strong>.
-<img src="/images/2/4.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/4.png"></li>
 </ul>
 </li>
 <li>
@@ -1085,21 +1085,21 @@
 <ul>
 <li>Click <strong>Actions</strong>.</li>
 <li>Click <strong>Edit subnet settings</strong>.
-<img src="/images/2/5.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/5.png"></li>
 </ul>
 </li>
 <li>
 <p>Click chọn <strong>Enable auto-assign public IPv4 address</strong>.</p>
 <ul>
 <li>Click <strong>Save</strong>.
-<img src="/images/2/6.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/6.png"></li>
 </ul>
 </li>
 <li>
 <p>Click <strong>Internet Gateways</strong>.</p>
 <ul>
 <li>Click <strong>Create internet gateway</strong>.
-<img src="/images/2/7.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/7.png"></li>
 </ul>
 </li>
 <li>
@@ -1107,14 +1107,14 @@
 <ul>
 <li>Tại mục <strong>Name tag</strong> điền <strong>Lab IGW</strong>.</li>
 <li>Click <strong>Create internet gateway</strong>.
-<img src="/images/2/8.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/8.png"></li>
 </ul>
 </li>
 <li>
 <p>Sau khi tạo thành công, click <strong>Actions</strong>.</p>
 <ul>
 <li>Click <strong>Attach to VPC</strong>.
-<img src="/images/2/9.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/9.png"></li>
 </ul>
 </li>
 <li>
@@ -1123,7 +1123,7 @@
 <li>Tại mục <strong>Available VPCs</strong> chọn <strong>Lab VPC</strong>.</li>
 <li>Click <strong>Attach internet gateway</strong>.</li>
 <li>Kiểm tra quá trình attach thành công như hình dưới.
-<img src="/images/2/10.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/10.png"></li>
 </ul>
 </li>
 <li>
@@ -1131,7 +1131,7 @@
 <ul>
 <li>Click <strong>Route Tables</strong>.</li>
 <li>Click <strong>Create route table</strong>.
-<img src="/images/2/11.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/11.png"></li>
 </ul>
 </li>
 <li>
@@ -1140,14 +1140,14 @@
 <li>Tại mục <strong>Name</strong>, điền <strong>Lab Publicrtb</strong>.</li>
 <li>Tại mục <strong>VPC</strong>, chọn <strong>Lab VPC</strong>.</li>
 <li>Click <strong>Create route table</strong>.
-<img src="/images/2/12.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/12.png"></li>
 </ul>
 </li>
 <li>
 <p>Sau khi tạo route table thành công.</p>
 <ul>
 <li>Click <strong>Edit routes</strong>.
-<img src="/images/2/13.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/13.png"></li>
 </ul>
 </li>
 <li>
@@ -1157,14 +1157,14 @@
 <li>Tại mục <strong>Destination</strong> điền 0.0.0.0/0</li>
 <li>Tại mục <strong>Target</strong> chọn <strong>Internet Gateway</strong> sau đó chọn <strong>Lab IGW</strong>.</li>
 <li>Click <strong>Save changes</strong>.
-<img src="/images/2/14.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/14.png"></li>
 </ul>
 </li>
 <li>
 <p>Click tab <strong>Subnet associations</strong>.</p>
 <ul>
 <li>Click <strong>Edit subnet associations</strong> để tiến hành associate custom routable chúng ta vừa tạo vào <strong>Lab Public Subnet</strong>.
-<img src="/images/2/15.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/15.png"></li>
 </ul>
 </li>
 <li>
@@ -1172,12 +1172,12 @@
 <ul>
 <li>Click chọn <strong>Lab Public Subnet</strong>.</li>
 <li>Click <strong>Save associations</strong>.
-<img src="/images/2/16.png" alt="VPC"></li>
+<img alt="VPC" src="/images/2/16.png"></li>
 </ul>
 </li>
 <li>
 <p>Kiểm tra thông tin route table đã được associate với <strong>Lab Public Subnet</strong> và thông tin route đi internet đã được trỏ đến Internet Gateway như hình dưới.
-<img src="/images/2/17.png" alt="VPC"></p>
+<img alt="VPC" src="/images/2/17.png"></p>
 </li>
 </ol>
 
@@ -1677,19 +1677,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713720038"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713720038"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713720038"></script>
-    <script src="/js/jquery.sticky.js?1713720038"></script>
-    <script src="/js/featherlight.min.js?1713720038"></script>
-    <script src="/js/highlight.pack.js?1713720038"></script>
+    <script src="/js/clipboard.min.js?1733804842"></script>
+    <script src="/js/perfect-scrollbar.min.js?1733804842"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1733804842"></script>
+    <script src="/js/jquery.sticky.js?1733804842"></script>
+    <script src="/js/featherlight.min.js?1733804842"></script>
+    <script src="/js/highlight.pack.js?1733804842"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713720038"></script>
-    <script src="/js/learn.js?1713720038"></script>
-    <script src="/js/hugo-learn.js?1713720038"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1733804842"></script>
+    <script src="/js/learn.js?1733804842"></script>
+    <script src="/js/hugo-learn.js?1733804842"></script>
 
-    <link href="/mermaid/mermaid.css?1713720038" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713720038"></script>
+    <link href="/mermaid/mermaid.css?1733804842" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1733804842"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
