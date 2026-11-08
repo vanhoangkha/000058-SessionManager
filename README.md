@@ -1,4 +1,4 @@
-# 🔒 Session Manager
+# Session Manager
 
 Secure shell access to EC2 without SSH using Systems Manager.
 
@@ -8,7 +8,7 @@ This is a hands-on workshop from the **AWS First Cloud Journey** series, designe
 
 ## Workshop
 
-📖 **[Start the workshop](https://vanhoangkha.github.io/000058-SessionManager/)**
+**[Start the workshop](https://vanhoangkha.github.io/000058-SessionManager/)**
 
 ## Prerequisites
 
